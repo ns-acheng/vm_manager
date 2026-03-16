@@ -11,6 +11,7 @@ VMRUN_PATH = r"C:\Program Files (x86)\VMware\VMware Workstation\vmrun.exe"
 
 VM_PATHS = {
     "w1125h2": r"C:\vm\w1125h2\w1125h2.vmx",
+    "w1124h2": r"C:\vm\w1124h2\w1124h2.vmx"
 }
 
 def setup(vm_name):
