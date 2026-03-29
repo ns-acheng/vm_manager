@@ -56,8 +56,8 @@ def manage_vm_state(vm_name):
             result = subprocess.run(check_cmd, capture_output=True, text=True)
             
             if vmx_path not in result.stdout:
-                logging.info(f"VM '{vm_name}' not running. Waiting 10 seconds...")
-                if stop_event.wait(10):
+                logging.info(f"VM '{vm_name}' not running. Waiting 5 seconds...")
+                if stop_event.wait(5):
                     break
                 
                 if not stop_event.is_set():
