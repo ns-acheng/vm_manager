@@ -69,8 +69,8 @@ def manage_vm_state(vm_name):
                         start_cmd = [VMRUN_PATH, "start", vmx_path]
                     subprocess.run(start_cmd)
                 
-                logging.info("Waiting 10 seconds after start...")
-                if stop_event.wait(10):
+                logging.info("Waiting 5 seconds after start...")
+                if stop_event.wait(5):
                     break
             else:
                 if stop_event.wait(5):
@@ -78,7 +78,7 @@ def manage_vm_state(vm_name):
                 
         except Exception as e:
             logging.error(f"Error: {e}")
-            if stop_event.wait(10):
+            if stop_event.wait(5):
                 break
     
     logging.info(f"Exiting VM Manager loop. Total restarts: {restart_count}")
